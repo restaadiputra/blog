@@ -2,7 +2,6 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Banner from 'components/common/Banner';
-
 import { SectionTitle } from 'helpers/definitions';
 
 interface SectionHeroBanner extends SectionTitle {
@@ -12,14 +11,21 @@ interface SectionHeroBanner extends SectionTitle {
 }
 
 const HeroBanner: React.FC = () => {
-  const heroBanner = {
-    title: 'I am Resta Adiputra',
-    subtitle: 'Front End Developer',
-    content:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    linkTo: '/about',
-    linkText: 'View My Profile',
-  };
+  const { markdownRemark } = useStaticQuery(graphql`
+    query {
+      markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
+        frontmatter {
+          title
+          subtitle
+          content
+          linkTo
+          linkText
+        }
+      }
+    }
+  `);
+
+  const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
 
   return (
     <Banner

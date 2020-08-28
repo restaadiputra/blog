@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 import 'assets/styles/global.css';
 import GlobalStyles from 'assets/styles/globalStyles';
@@ -37,6 +38,7 @@ const Layout: React.FC<Props> = ({ children }) => {
           >
             {children}
           </motion.div>
+          <Footer />
         </Styled.Layout>
       </AnimatePresence>
     </>

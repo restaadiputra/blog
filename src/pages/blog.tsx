@@ -2,12 +2,13 @@ import React from 'react';
 
 import SEO from 'components/SEO';
 import Layout from 'components/Layout';
+import Posts from 'components/Posts';
 
 const HomePage: React.FC = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <h1 className="bg-red-300">blog</h1>
+      <Posts />
     </Layout>
   );
 };

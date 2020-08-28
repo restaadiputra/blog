@@ -34,7 +34,7 @@ interface Post {
 const Posts: React.FC = () => {
   const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "blog section" } }) {
+      markdownRemark(frontmatter: { category: { eq: "latest section" } }) {
         frontmatter {
           title
           subtitle
@@ -45,6 +45,7 @@ const Posts: React.FC = () => {
           frontmatter: { category: { eq: "blog" }, published: { eq: true } }
         }
         sort: { fields: frontmatter___date, order: DESC }
+        limit: 4
       ) {
         edges {
           node {

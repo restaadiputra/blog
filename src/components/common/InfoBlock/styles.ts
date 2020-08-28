@@ -6,25 +6,26 @@ export interface StyledProps {
 }
 
 export const InfoBlock = styled.div<StyledProps>`
-  ${tw`flex flex-col my-4 mx-3 p-4 bg-white rounded-lg border border-orange-300`};
+  ${tw`flex flex-col my-4 mx-3 bg-white border border-orange-300`};
   ${({ center }) => center && tw`items-center`};
   height: 100%;
 `;
 
 export const Icon = styled.span`
-  ${tw`flex items-center justify-center w-10 h-10 text-orange-500 border border-orange-600 rounded-full mb-2 text-xl`};
+  ${tw`flex items-center justify-center w-10 h-10 text-white border border-white rounded-full mb-2 text-xl`};
 `;
 
 export const Wrapper = styled.div<StyledProps>`
+  ${tw`w-full -mt-4 -mx-8 p-4 bg-orange-600 flex flex-col items-center justify-center`}
   ${({ center }) => center && tw`text-center`};
 `;
 
 export const Title = styled.h3`
-  ${tw`text-md mt-1 font-semibold`};
+  ${tw`text-md mt-1 text-white font-semibold`};
 `;
 
 export const Content = styled.p`
-  ${tw`mt-1 text-sm leading-8`};
+  ${tw`mt-1 p-4 text-sm leading-8`};
 `;
 
 export const WrapperLink = styled.a`

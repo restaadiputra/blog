@@ -15,13 +15,13 @@ const InfoBlock: React.FC<Props> = ({ icon, title, content, center, link }) => (
   <Styled.WrapperLink href={link}>
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
       <Styled.InfoBlock center={center}>
-        <Styled.Icon>
-          <Icon icon={icon} />
-        </Styled.Icon>
         <Styled.Wrapper center={center}>
+          <Styled.Icon>
+            <Icon icon={icon} />
+          </Styled.Icon>
           <Styled.Title>{title}</Styled.Title>
-          <Styled.Content>{content}</Styled.Content>
         </Styled.Wrapper>
+        <Styled.Content>{content}</Styled.Content>
       </Styled.InfoBlock>
     </motion.div>
   </Styled.WrapperLink>

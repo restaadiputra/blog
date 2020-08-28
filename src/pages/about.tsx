@@ -3,7 +3,7 @@ import React from 'react';
 import SEO from 'components/SEO';
 import Layout from 'components/Layout';
 
-const HomePage: React.FC = () => {
+const AboutPage: React.FC = () => {
   return (
     <Layout>
       <SEO title="About" />
@@ -12,4 +12,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default AboutPage;

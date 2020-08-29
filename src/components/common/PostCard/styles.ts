@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-export const Posts = styled.div`
-  ${tw`w-full flex flex-wrap`};
-`;
-
 export const Post = styled.div`
   ${tw`w-full sm:w-1/2 p-3`};
 `;
 
 export const Card = styled.div`
-  ${tw`w-full h-full flex flex-col overflow-hidden border border-gray-300  hover:shadow-2xl hover:border-none`};
+  ${tw`w-full h-full flex flex-col overflow-hidden shadow hover:shadow-2xl`};
   transition: 0.2s;
 `;
 

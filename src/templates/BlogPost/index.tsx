@@ -1,16 +1,16 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+import { defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader';
 
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Container from 'components/common/Container';
 import TitleSection from 'components/common/TitleSection';
-import FormatHtml from 'components/FormatHtml';
+import FormatHtml from 'components/common/FormatHtml';
 
 import * as Styled from './styles';
 
-deckDeckGoHighlightElement();
+defineCustomElements();
 
 interface Post {
   html: React.ReactNode;

@@ -23,6 +23,13 @@ export const Separator = styled.div<StyledProps>`
   ${tw`relative w-2 h-8 mb-6 -mt-2`};
   ${({ center }) => center && tw`mx-auto`};
 
+  span:first-child {
+    ${tw`bg-orange-500 w-6 absolute h-px top-1/2`}
+  }
+  span:last-child {
+    ${tw`bg-gray-800 w-6 absolute h-px top-1/2 mt-1 -ml-1`}
+  }
+
   &:before {
     content: '';
     ${tw`bg-orange-500 mt-2 h-6 w-px absolute left-0`};

@@ -3,6 +3,9 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
   },
   theme: {
+    inset: {
+      '1/2': '50%',
+    },
     extend: {
       transitionProperty: {
         height: 'height',

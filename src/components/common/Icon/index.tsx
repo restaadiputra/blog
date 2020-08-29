@@ -11,37 +11,13 @@ import {
   faTwitter,
   faMedium,
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  faLaptopCode,
-  faDrawPolygon,
-  faEdit,
-  faBullhorn,
-  faMapMarkerAlt,
-  faPhone,
-  faPaperPlane,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {
   FontAwesomeIcon,
   FontAwesomeIconProps,
 } from '@fortawesome/react-fontawesome';
 
-library.add(
-  fab,
-  faTwitter,
-  faMedium,
-  faEnvelope,
-  faGithub,
-  faLinkedin,
-  faLaptopCode,
-  faDrawPolygon,
-  faEdit,
-  faEdit,
-  faBullhorn,
-  faMapMarkerAlt,
-  faPhone,
-  faPaperPlane
-);
+library.add(fab, faTwitter, faMedium, faEnvelope, faGithub, faLinkedin);
 
 export type IconProps = FontAwesomeIconProps['icon'];
 export type IconName = IconNameType;

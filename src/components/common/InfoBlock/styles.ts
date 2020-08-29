@@ -6,9 +6,12 @@ export interface StyledProps {
 }
 
 export const InfoBlock = styled.div<StyledProps>`
-  ${tw`flex flex-col my-4 mx-3 bg-white border border-orange-300`};
+  ${tw`flex flex-col my-4 mx-3 bg-white shadow hover:shadow-xl`};
   ${({ center }) => center && tw`items-center`};
   height: 100%;
+  transition-property: box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const Icon = styled.span`
@@ -16,7 +19,7 @@ export const Icon = styled.span`
 `;
 
 export const Wrapper = styled.div<StyledProps>`
-  ${tw`w-full -mt-4 -mx-8 p-4 bg-orange-600 flex flex-col items-center justify-center`}
+  ${tw`w-full -mt-4 -mx-8 p-4 bg-primary flex flex-col items-center justify-center`}
   ${({ center }) => center && tw`text-center`};
 `;
 

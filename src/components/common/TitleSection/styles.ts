@@ -15,7 +15,7 @@ export const Title = styled.h2<StyledProps>`
 `;
 
 export const SubTitle = styled.h4<StyledProps>`
-  ${tw`text-xs text-orange-600 w-full text-left`};
+  ${tw`text-xs text-primary w-full text-left`};
   ${({ center }) => center && tw`text-center`};
 `;
 
@@ -24,19 +24,19 @@ export const Separator = styled.div<StyledProps>`
   ${({ center }) => center && tw`mx-auto`};
 
   span:first-child {
-    ${tw`bg-orange-500 w-6 absolute h-px top-1/2`}
+    ${tw`bg-primary w-6 absolute h-px top-1/2`}
   }
   span:last-child {
-    ${tw`bg-gray-800 w-6 absolute h-px top-1/2 mt-1 -ml-1`}
+    ${tw`bg-tertiary w-6 absolute h-px top-1/2 mt-1 -ml-1`}
   }
 
   &:before {
     content: '';
-    ${tw`bg-orange-500 mt-2 h-6 w-px absolute left-0`};
+    ${tw`bg-primary mt-2 h-6 w-px absolute left-0`};
   }
 
   &:after {
     content: '';
-    ${tw`bg-gray-800 h-6 w-px absolute ml-1`};
+    ${tw`bg-tertiary h-6 w-px absolute ml-1`};
   }
 `;

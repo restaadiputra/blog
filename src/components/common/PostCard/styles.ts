@@ -7,11 +7,13 @@ export const Post = styled.div`
 
 export const Card = styled.div`
   ${tw`w-full h-full flex flex-col overflow-hidden shadow hover:shadow-2xl`};
-  transition: 0.2s;
+  transition-property: box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const Content = styled.div`
-  ${tw`p-4 text-indigo-900`};
+  ${tw`p-4 text-gray-900`};
 `;
 
 export const Image = styled.figure`
@@ -25,7 +27,7 @@ export const Title = styled.h3`
 export const Description = styled.p``;
 
 export const Date = styled.h3`
-  ${tw`text-xs text-orange-500`};
+  ${tw`text-xs text-secondary`};
 `;
 
 export const Tags = styled.div`
@@ -33,5 +35,5 @@ export const Tags = styled.div`
 `;
 
 export const Tag = styled.span`
-  ${tw`text-xs text-indigo-900 border border-orange-400 px-2 py-1 mr-2`}
+  ${tw`text-xs text-white bg-secondary px-2 py-1 mr-2`}
 `;

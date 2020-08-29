@@ -9,6 +9,6 @@ export interface StyledProps {
 
 export const Button = motion.custom(styled.button<StyledProps>`
   outline: none !important;
-  ${tw`py-2 px-8 border-orange-600 bg-orange-600 text-white`};
+  ${tw`py-2 px-8 bg-primary text-white`};
   ${({ block }) => block && tw`w-full`};
 `);

@@ -50,16 +50,16 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
         <Styled.Links>
           <span>
             {previous && (
-              <Link to={previous.fields.slug} rel="previous">
+              <Styled.Link to={previous.fields.slug} rel="previous">
                 ← {previous.frontmatter.title}
-              </Link>
+              </Styled.Link>
             )}
           </span>
           <span>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Styled.Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </Link>
+              </Styled.Link>
             )}
           </span>
         </Styled.Links>

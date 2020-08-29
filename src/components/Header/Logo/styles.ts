@@ -3,7 +3,20 @@ import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 
 export const Logo = styled(Link)`
-  ${tw`flex items-center mr-auto text-orange-600 hover:text-orange-600`};
+  ${tw`flex items-center mr-auto text-primary tracking-wider relative hover:text-primary`};
+
+  &:before {
+    ${tw`absolute w-full bg-primary h-px left-0 invisible`};
+    content: '';
+    bottom: -1px;
+    transform: scaleX(0);
+    transition: 0.2s;
+  }
+
+  &:hover:before {
+    ${tw`visible`};
+    transform: scaleX(1);
+  }
 `;
 
 export const Text = styled.h1`
@@ -11,7 +24,7 @@ export const Text = styled.h1`
 `;
 
 export const Image = styled.figure`
-  ${tw`w-10 h-10 mr-3 border border-orange-600 rounded-full`};
+  ${tw`w-10 h-10 mr-3 border border-primary rounded-full`};
 
   img {
     ${tw`border-4 border-white rounded-full`};

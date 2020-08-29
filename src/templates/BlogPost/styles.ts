@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import { Link as GatsbyLink } from 'gatsby';
 
 export const Title = styled.h3`
   ${tw`font-semibold mb-4`};
@@ -11,4 +12,8 @@ export const Image = styled.figure`
 
 export const Links = styled.div`
   ${tw`w-full flex justify-between mt-10`};
+`;
+
+export const Link = styled(GatsbyLink)`
+  ${tw`text-secondary hover:text-secondary hover:underline`}
 `;

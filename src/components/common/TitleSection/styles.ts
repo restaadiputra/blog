@@ -25,7 +25,7 @@ export const Separator = styled.div<StyledProps>`
 
   &:before {
     content: '';
-    ${tw`bg-orange-500 h-full w-px absolute left-0`};
+    ${tw`bg-orange-500 mt-2 h-6 w-px absolute left-0`};
   }
 
   &:after {

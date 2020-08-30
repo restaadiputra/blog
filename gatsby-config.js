@@ -25,7 +25,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          `gatsby-remark-images-anywhere`,
+          // `gatsby-remark-images-anywhere`,
           {
             resolve: `gatsby-remark-highlight-code`,
             options: {
@@ -38,19 +38,23 @@ module.exports = {
             options: {
               maxWidth: 768,
               linkImagesToOriginal: false,
+              showCaptions: ['title', 'alt'],
+              withWebp: true,
+              markdownCaptions: true,
+              tracedSVG: true,
             },
           },
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'MarkdownRemark',
-        imagePath: 'frontmatter.cover',
-        name: 'remoteCover',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-remote-images`,
+    //   options: {
+    //     nodeType: 'MarkdownRemark',
+    //     imagePath: 'frontmatter.cover',
+    //     name: 'remoteCover',
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

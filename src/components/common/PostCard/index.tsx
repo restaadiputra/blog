@@ -10,16 +10,21 @@ export interface Post {
     fields: {
       slug: string;
     };
-    remoteCover: {
-      childImageSharp: {
-        fluid: FluidObject | FluidObject[];
-      };
-    };
+    // remoteCover: {
+    //   childImageSharp: {
+    //     fluid: FluidObject | FluidObject[];
+    //   };
+    // };
     frontmatter: {
       title: string;
       description: string;
       date: string;
       tags: string[];
+      cover: {
+        childImageSharp: {
+          fluid: FluidObject | FluidObject[];
+        };
+      };
     };
   };
 }
@@ -27,8 +32,8 @@ export interface Post {
 const PostCard: React.FC<Post> = ({ node }) => {
   const {
     fields: { slug },
-    remoteCover,
-    frontmatter: { title, description, date, tags },
+    // remoteCover,
+    frontmatter: { title, description, date, tags, cover },
   } = node;
 
   return (
@@ -37,7 +42,7 @@ const PostCard: React.FC<Post> = ({ node }) => {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
           <Styled.Card>
             <Styled.Image>
-              <Img fluid={remoteCover.childImageSharp.fluid} alt={title} />
+              <Img fluid={cover.childImageSharp.fluid} alt={title} />
             </Styled.Image>
             <Styled.Content>
               <Styled.Date>{date}</Styled.Date>

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-export const ContainerPost = styled.div`
+export const ContainerMarkdown = styled.div`
+  ${tw`w-full`}
   h1,
   h2,
   h3,
@@ -87,7 +88,12 @@ export const ContainerPost = styled.div`
   }
 
   figcaption {
-    ${tw`leading-3 mt-1 text-primary italic mb-0 text-center`}
+    ${tw`leading-3 text-sm mt-3 text-gray-600 text-primary italic mb-0 text-center`}
+    > p {
+      span {
+        ${tw`text-gray-600`}
+      }
+    }
   }
 
   code {

@@ -43,6 +43,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'MarkdownRemark',
+        imagePath: 'frontmatter.cover',
+        name: 'remoteCover'
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

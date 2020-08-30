@@ -1,6 +1,6 @@
 ---
 category: 'blog'
-cover: './cover.jpg'
+cover: 'https://images.unsplash.com/photo-1558980664-769d59546b3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80'
 title: 'Blog Post 1'
 description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
 date: '2019-11-13'

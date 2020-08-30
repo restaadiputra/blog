@@ -49,27 +49,29 @@ const Skills: React.FC = () => {
   const skills: Skill[] = allMarkdownRemark.edges;
 
   return (
-    <Container section>
-      <TitleSection
-        title={sectionTitle.title}
-        subtitle={sectionTitle.subtitle}
-        center
-      />
-      <Styled.Skills>
-        {skills.map(item => {
-          const {
-            id,
-            frontmatter: { title, percentage },
-          } = item.node;
+    <Styled.Wrapper>
+      <Container section>
+        <TitleSection
+          title={sectionTitle.title}
+          subtitle={sectionTitle.subtitle}
+          center
+        />
+        <Styled.Skills>
+          {skills.map(item => {
+            const {
+              id,
+              frontmatter: { title, percentage },
+            } = item.node;
 
-          return (
-            <Styled.Skill key={id}>
-              <ProgressBar title={title} percentage={percentage} />
-            </Styled.Skill>
-          );
-        })}
-      </Styled.Skills>
-    </Container>
+            return (
+              <Styled.Skill key={id}>
+                <ProgressBar title={title} percentage={percentage} />
+              </Styled.Skill>
+            );
+          })}
+        </Styled.Skills>
+      </Container>
+    </Styled.Wrapper>
   );
 };
 

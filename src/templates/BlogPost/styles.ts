@@ -15,7 +15,8 @@ export const Links = styled.div`
 `;
 
 export const Link = styled(GatsbyLink)`
-  ${tw`text-secondary hover:text-secondary hover:underline`}
+  ${tw`text-tertiary hover:text-secondary`}
+  transition: 0.2s;
 `;
 
 export const Tags = styled.div`

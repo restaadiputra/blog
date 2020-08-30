@@ -8,10 +8,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#206a5d',
-        secondary: '#81b214',
-        tertiary: '#bfdcae',
-        background: '#f1f1e8',
+        primary: '#113f67',
+        secondary: '#226597',
+        tertiary: '#87c0cd',
+        background: '#f3f9fb',
       },
       transitionProperty: {
         height: 'height',

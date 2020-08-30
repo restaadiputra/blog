@@ -5,8 +5,8 @@ import Timeline from 'components/common/Timeline';
 import Container from 'components/common/Container';
 import TitleSection from 'components/common/TitleSection';
 import FormatHtml from 'components/common/FormatHtml';
-
 import { SectionTitle } from 'helpers/definitions';
+import * as Styled from './styles';
 
 interface Experience {
   node: {
@@ -54,32 +54,34 @@ const Experience: React.FC = () => {
   const experiences: Experience[] = allMarkdownRemark.edges;
 
   return (
-    <Container section>
-      <TitleSection
-        title={sectionTitle.title}
-        subtitle={sectionTitle.subtitle}
-        center
-      />
+    <Styled.Wrapper>
+      <Container section>
+        <TitleSection
+          title={sectionTitle.title}
+          subtitle={sectionTitle.subtitle}
+          center
+        />
 
-      {experiences.map(item => {
-        const {
-          id,
-          html,
-          frontmatter: { company, position, startDate, endDate },
-        } = item.node;
+        {experiences.map(item => {
+          const {
+            id,
+            html,
+            frontmatter: { company, position, startDate, endDate },
+          } = item.node;
 
-        return (
-          <Timeline
-            key={id}
-            title={company}
-            subtitle={position}
-            content={<FormatHtml content={html} />}
-            startDate={startDate}
-            endDate={endDate}
-          />
-        );
-      })}
-    </Container>
+          return (
+            <Timeline
+              key={id}
+              title={company}
+              subtitle={position}
+              content={<FormatHtml content={html} />}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          );
+        })}
+      </Container>
+    </Styled.Wrapper>
   );
 };
 

@@ -48,7 +48,7 @@ module.exports = {
       options: {
         nodeType: 'MarkdownRemark',
         imagePath: 'frontmatter.cover',
-        name: 'remoteCover'
+        name: 'remoteCover',
       },
     },
     `gatsby-transformer-sharp`,

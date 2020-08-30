@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
             key={`nav-item-${index}`}
             to={item.slug}
             activeClassName="active"
-            // whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.9 }}
           >
             {item.title}
           </Styled.NavItem>

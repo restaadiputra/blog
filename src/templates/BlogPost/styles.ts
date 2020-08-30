@@ -17,3 +17,11 @@ export const Links = styled.div`
 export const Link = styled(GatsbyLink)`
   ${tw`text-secondary hover:text-secondary hover:underline`}
 `;
+
+export const Tags = styled.div`
+  ${tw`pr-4 pt-10 mt-auto`}
+`;
+
+export const Tag = styled.span`
+  ${tw`text-xs text-white bg-secondary px-2 py-1 mr-2`}
+`;

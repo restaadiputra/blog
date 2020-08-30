@@ -20,6 +20,7 @@ interface Post {
   frontmatter: {
     title: string;
     date: string;
+    tags: string[];
   };
 }
 
@@ -47,6 +48,12 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
           subtitle={post.frontmatter.date}
         />
         <FormatHtml content={post.html} />
+        <Styled.Tags>
+          <p className="text-xs mb-2 text-gray-600">Tags: </p>
+          {post.frontmatter.tags.map(item => (
+            <Styled.Tag key={item}>{item}</Styled.Tag>
+          ))}
+        </Styled.Tags>
         <Styled.Links>
           <span>
             {previous && (
@@ -77,6 +84,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMM DD, YYYY")
+        tags
       }
     }
   }

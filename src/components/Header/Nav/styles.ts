@@ -8,8 +8,11 @@ interface StyledProps {
 }
 
 export const Nav = styled.nav<StyledProps>`
-  ${tw`sm:flex flex-col sm:flex-row sm:w-auto w-full order-last sm:order-none my-4 sm:my-0 hidden`};
-  ${({ open }) => open && tw`flex`};
+  ${tw`flex flex-col sm:max-h-200 sm:flex-row sm:w-auto w-full order-last overflow-hidden sm:order-none my-4 sm:my-0`};
+  ${({ open }) => (open ? tw`max-h-200` : tw`max-h-0 my-0`)};
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const NavItem = motion.custom(styled(Link)`

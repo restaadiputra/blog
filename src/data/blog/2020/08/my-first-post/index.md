@@ -1,6 +1,6 @@
 ---
 category: 'blog'
-cover: './patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
+cover: './cover.jpg'
 title: 'My First Post'
 description: 'My first post of my own website'
 date: '2020-08-30'
@@ -8,7 +8,7 @@ tags: ['personal']
 published: true
 ---
 
-![Photo by Patrick Tomasso on Unsplash](./patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg 'Photo by Patrick Tomasso on Unsplash')
+![Photo by Patrick Tomasso on Unsplash](./cover.jpg 'Photo by Patrick Tomasso on Unsplash')
 
 Finally, after 1 year delaying it, I have my own website where I can write my blog. How exiting! 😀
 

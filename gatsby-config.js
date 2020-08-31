@@ -68,5 +68,12 @@ module.exports = {
         purgeOnly: [`src/assets/styles/global.css`],
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `blue`,
+        showSpinner: false,
+      },
+    },
   ],
 };

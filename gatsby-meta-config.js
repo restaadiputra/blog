@@ -14,4 +14,4 @@ module.exports = {
   icon: `content/assets/felog.png`,
   keywords: ['website', 'blog', 'development'],
   ga: '',
-}
+};

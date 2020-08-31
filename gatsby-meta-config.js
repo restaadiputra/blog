@@ -1,9 +1,9 @@
 module.exports = {
-  title: `Res-Dev`,
-  description: `Personal website that contains personal info, blogs and other related things about Resta Adiputra`,
-  author: `@resta_adiputra`,
+  title: `Resta-Dev`,
+  description: `A personal website that contains personal info, blogs and other related things about me, Resta Adiputra`,
+  author: `Resta Adiputra`,
   introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
-  siteUrl: `http://localhost:8000`,
+  siteUrl: `https://resta-dev.com`,
   social: {
     twitter: ``,
     github: ``,

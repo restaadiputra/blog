@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'My First Post'
-description: 'My first post of my own website'
+description: 'My first post in my own website after about 1 year delay and with a lot of excuses from myself. Cheers!'
 date: '2020-08-30'
 tags: ['personal']
 published: true

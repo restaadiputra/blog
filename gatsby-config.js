@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `res-dev`,
-        short_name: `res-dev`,
+        name: `resta-dev`,
+        short_name: `resta-dev`,
         start_url: `/`,
         background_color: `#f3f9fb`,
         theme_color: `#f3f9fb`,

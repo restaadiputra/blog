@@ -7,10 +7,16 @@ import Experience from 'components/Experience';
 import Education from 'components/Education';
 import Skills from 'components/Skills';
 
-const AboutPage: React.FC = () => {
+interface Props {
+  location: {
+    pathname: string;
+  };
+}
+
+const AboutPage: React.FC<Props> = ({ location }) => {
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="About" pathname={location.pathname} />
       <Personal />
       <hr />
       <Experience />

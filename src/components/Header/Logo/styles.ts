@@ -20,7 +20,7 @@ export const Logo = styled(Link)`
 `;
 
 export const Text = styled.h1`
-  ${tw`text-lg font-bold tracking-wider`};
+  ${tw`text-lg font-bold tracking-wider uppercase`};
 `;
 
 export const Image = styled.figure`

@@ -29,13 +29,6 @@ const Posts: React.FC = () => {
             fields {
               slug
             }
-            # remoteCover {
-            #   childImageSharp {
-            #     fluid(maxWidth: 400) {
-            #       ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            #     }
-            #   }
-            # }
             frontmatter {
               title
               description

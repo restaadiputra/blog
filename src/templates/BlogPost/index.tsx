@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader';
 
 import Layout from 'components/Layout';
@@ -17,10 +17,21 @@ interface Post {
   fields: {
     slug: string;
   };
+  excerpt: string;
   frontmatter: {
     title: string;
+    description: string;
     date: string;
     tags: string[];
+    image: {
+      childImageSharp: {
+        resize: {
+          src: string;
+          height: number;
+          width: number;
+        };
+      };
+    };
   };
 }
 
@@ -33,15 +44,26 @@ interface Props {
     next: Post;
     previous: Post;
   };
+  location: {
+    pathname: string;
+  };
 }
 
-const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
+const BlogPost: React.FC<Props> = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
+  const image = post.frontmatter.image
+    ? post.frontmatter.image.childImageSharp.resize
+    : undefined;
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+        image={image}
+        pathname={location.pathname}
+      />
       <Container section>
         <TitleSection
           title={post.frontmatter.title}
@@ -81,10 +103,21 @@ export const query = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(pruneLength: 160)
       frontmatter {
         title
+        description
         date(formatString: "MMM DD, YYYY")
         tags
+        image: cover {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
       }
     }
   }

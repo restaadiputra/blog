@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-export const ContainerMarkdown = styled.div`
+export const ContainerMarkdown = styled.span`
   ${tw`w-full`}
   h1,
   h2,

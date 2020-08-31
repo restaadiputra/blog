@@ -5,10 +5,16 @@ import Layout from 'components/Layout';
 import HeroBanner from 'components/HeroBanner';
 import LatestPosts from 'components/LatestPosts';
 
-const HomePage: React.FC = () => {
+interface Props {
+  location: {
+    pathname: string;
+  };
+}
+
+const HomePage: React.FC<Props> = ({ location }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" pathname={location.pathname} />
       <HeroBanner />
       <hr />
       <LatestPosts />

@@ -1,9 +1,7 @@
+const metaConfig = require('./gatsby-meta-config')
+
 module.exports = {
-  siteMetadata: {
-    title: `RES-DEV`,
-    description: `Website from Resta Adiputra`,
-    author: `Resta Adiputra`,
-  },
+  siteMetadata: metaConfig,
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
@@ -25,7 +23,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          // `gatsby-remark-images-anywhere`,
           {
             resolve: `gatsby-remark-highlight-code`,
             options: {
@@ -47,14 +44,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-remote-images`,
-    //   options: {
-    //     nodeType: 'MarkdownRemark',
-    //     imagePath: 'frontmatter.cover',
-    //     name: 'remoteCover',
-    //   },
-    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -63,8 +52,8 @@ module.exports = {
         name: `res-dev`,
         short_name: `res-dev`,
         start_url: `/`,
-        background_color: `#81e6d9`,
-        theme_color: `#81e6d9`,
+        background_color: `#f3f9fb`,
+        theme_color: `#f3f9fb`,
         display: `minimal-ui`,
         icon: `src/assets/images/gatsby-icon.png`,
       },
@@ -79,7 +68,5 @@ module.exports = {
         purgeOnly: [`src/assets/styles/global.css`],
       },
     },
-    // `gatsby-plugin-offline`,
-    // `gatsby-plugin-remove-serviceworker`,
   ],
 };

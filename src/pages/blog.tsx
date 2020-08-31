@@ -4,10 +4,16 @@ import SEO from 'components/SEO';
 import Layout from 'components/Layout';
 import Posts from 'components/Posts';
 
-const BlogPage: React.FC = () => {
+interface Props {
+  location: {
+    pathname: string;
+  };
+}
+
+const BlogPage: React.FC<Props> = ({ location }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Blog" pathname={location.pathname} />
       <Posts />
     </Layout>
   );

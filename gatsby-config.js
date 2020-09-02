@@ -55,7 +55,7 @@ module.exports = {
         background_color: `#f3f9fb`,
         theme_color: `#f3f9fb`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`,
+        icon: `src/assets/images/web-icon.png`,
       },
     },
     `gatsby-plugin-styled-components`,

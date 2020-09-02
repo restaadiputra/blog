@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
           title
         }
       }
-      placeholderImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+      placeholderImage: file(relativePath: { eq: "web-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 80) {
             ...GatsbyImageSharpFluid
@@ -28,9 +28,9 @@ const Logo: React.FC = () => {
 
   return (
     <Styled.Logo to="/">
-      {/* <Styled.Image>
+      <Styled.Image>
         <Img fluid={logoImage} alt={logoTitle} />
-      </Styled.Image> */}
+      </Styled.Image>
       <Styled.Text>{logoTitle}</Styled.Text>
     </Styled.Logo>
   );

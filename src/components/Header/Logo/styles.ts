@@ -6,7 +6,9 @@ export const Logo = styled(Link)`
   ${tw`flex items-center mr-auto text-primary tracking-wider relative hover:text-primary`};
 
   &:before {
-    ${tw`absolute w-full bg-primary h-px left-0 invisible`};
+    ${tw`absolute bg-primary h-px left-0 invisible`};
+    left: 3.25rem;
+    width: 70%;
     content: '';
     bottom: -1px;
     transform: scaleX(0);

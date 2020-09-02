@@ -1,11 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 
 import Container from 'components/common/Container';
 import TitleSection from 'components/common/TitleSection';
 import * as Styled from './styles';
 
-import { SectionTitle } from 'helpers/definitions';
 import FormatHtml from 'components/common/FormatHtml';
 
 interface Personal {
@@ -17,8 +17,15 @@ interface Personal {
 }
 
 const Banner: React.FC = () => {
-  const { markdownRemark } = useStaticQuery(graphql`
+  const { markdownRemark, profileImage } = useStaticQuery(graphql`
     query {
+      profileImage: file(relativePath: { eq: "profile.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
       markdownRemark(frontmatter: { category: { eq: "about" } }) {
         frontmatter {
           title
@@ -31,6 +38,8 @@ const Banner: React.FC = () => {
 
   const data: Personal = markdownRemark;
   const { frontmatter, html } = data;
+  const profile: FluidObject | FluidObject[] =
+    profileImage.childImageSharp.fluid;
 
   return (
     <Styled.Banner>
@@ -40,6 +49,9 @@ const Banner: React.FC = () => {
           subtitle={frontmatter.subtitle}
         />
         <Styled.Content>
+          <Styled.Image>
+            <Img fluid={profile} alt="profile" />
+          </Styled.Image>
           <FormatHtml content={html} />
         </Styled.Content>
       </Container>

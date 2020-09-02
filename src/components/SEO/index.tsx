@@ -33,7 +33,7 @@ const SEO: React.FC<Props> = ({
   title,
   pathname,
 }) => {
-  const { site } = useStaticQuery(
+  const { site, cover } = useStaticQuery(
     graphql`
       query {
         site {
@@ -45,6 +45,15 @@ const SEO: React.FC<Props> = ({
             siteUrl
           }
         }
+        cover: file(relativePath: { eq: "cover.png" }) {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
       }
     `
   );
@@ -53,7 +62,15 @@ const SEO: React.FC<Props> = ({
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null;
+      : `${site.siteMetadata.siteUrl}${cover.childImageSharp.resize.src}`;
+  const imageWidth =
+    metaImage && metaImage.src
+      ? metaImage.width
+      : cover.childImageSharp.resize.width;
+  const imageHeight =
+    metaImage && metaImage.src
+      ? metaImage.height
+      : cover.childImageSharp.resize.height;
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
@@ -112,7 +129,7 @@ const SEO: React.FC<Props> = ({
         },
       ]
         .concat(
-          metaImage
+          image
             ? [
                 {
                   property: 'og:image',
@@ -120,11 +137,11 @@ const SEO: React.FC<Props> = ({
                 },
                 {
                   property: 'og:image:width',
-                  content: metaImage.width,
+                  content: imageWidth,
                 },
                 {
                   property: 'og:image:height',
-                  content: metaImage.height,
+                  content: imageHeight,
                 },
                 {
                   name: 'twitter:card',
